@@ -1,0 +1,6 @@
+config BR2_PACKAGE_LOGGER
+    bool "logger"
+    help
+      A lightweight logging library for embedded Linux systems.
+      Supports INFO, WARNING, ERROR, and DEBUG log levels with
+      configurable output file and detailed log entries.
