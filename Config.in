@@ -1,7 +1,20 @@
 config BR2_PACKAGE_LOGGER
     bool "logger"
-    depends on BR2_PACKAGE_NODEJS
     help
       A lightweight logging library for embedded Linux systems.
       Supports INFO, WARNING, ERROR, and DEBUG log levels with
       configurable output file and detailed log entries.
+
+config BR2_PACKAGE_LOGGER_NODEJS
+    bool "Enable Node.js addon support"
+    depends on BR2_PACKAGE_LOGGER
+    select BR2_PACKAGE_NODEJS
+    select BR2_PACKAGE_HOST_NODEJS
+    select BR2_PACKAGE_HOST_PYTHON3
+    help
+      Enables the Node.js addon for the Logger library, allowing
+      it to be used in Node.js applications. This option requires
+      Node.js and Python3 to be enabled in the Buildroot configuration.
+
+comment "Node.js addon support enables Node.js and Python3"
+    depends on BR2_PACKAGE_LOGGER

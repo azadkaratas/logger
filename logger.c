@@ -107,10 +107,10 @@
  
      /* Write log header with aligned fields */
      if (level == LOG_DEBUG) {
-         fprintf(log_fp, "[%s]\t%s\t<%s>:%s:\t", time_str, level_to_string(level), 
+         fprintf(log_fp, "[%s]\t%s\t<%s>%s:\t", time_str, level_to_string(level), 
                  app_name, func);
      } else {
-         fprintf(log_fp, "[%s]\t%s\t<%s>:\t", time_str, level_to_string(level), app_name);
+         fprintf(log_fp, "[%s]\t%s\t<%s>\t", time_str, level_to_string(level), app_name);
      }
  
      /* Write log message */
